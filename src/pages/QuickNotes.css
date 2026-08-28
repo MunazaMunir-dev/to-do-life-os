@@ -1,0 +1,1008 @@
+/* =========================================================
+   PAGE
+========================================================= */
+
+.quick-notes-page {
+  min-height: 100vh;
+  padding: 28px;
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(99, 102, 241, 0.08),
+      transparent 30%
+    ),
+    #f7f8fc;
+  color: #111827;
+  box-sizing: border-box;
+}
+
+.quick-notes-page *,
+.quick-notes-page *::before,
+.quick-notes-page *::after {
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.quick-notes-header {
+  max-width: 1450px;
+  margin: 0 auto 22px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.page-kicker {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 8px;
+  color: #6366f1;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+}
+
+.quick-notes-header h1 {
+  margin: 0;
+  font-size: clamp(30px, 4vw, 44px);
+  line-height: 1.05;
+  letter-spacing: -0.045em;
+  font-weight: 850;
+}
+
+.quick-notes-header p {
+  margin: 10px 0 0;
+  color: #6b7280;
+  font-size: 15px;
+}
+
+.header-actions {
+  display: flex;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.primary-btn,
+.secondary-btn {
+  height: 42px;
+  padding: 0 16px;
+  border-radius: 11px;
+  border: 1px solid transparent;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 750;
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
+    background 0.18s ease;
+}
+
+.primary-btn {
+  color: white;
+  background: #111827;
+  box-shadow:
+    0 8px 18px rgba(17, 24, 39, 0.14);
+}
+
+.primary-btn:hover,
+.secondary-btn:hover {
+  transform: translateY(-1px);
+}
+
+.primary-btn:hover {
+  background: #1f2937;
+}
+
+.secondary-btn {
+  color: #374151;
+  background: white;
+  border-color: #e5e7eb;
+}
+
+/* =========================================================
+   TOOLBAR
+========================================================= */
+
+.creative-toolbar {
+  max-width: 1450px;
+  margin: 0 auto 14px;
+  padding: 9px;
+  min-height: 62px;
+  border: 1px solid #e5e7eb;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow:
+    0 10px 30px rgba(17, 24, 39, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.tool-group {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.tool-btn {
+  min-width: 36px;
+  height: 36px;
+  padding: 0 9px;
+  border: 1px solid transparent;
+  border-radius: 9px;
+  background: transparent;
+  color: #4b5563;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 700;
+  transition:
+    background 0.16s ease,
+    color 0.16s ease,
+    border 0.16s ease;
+}
+
+.tool-btn:hover {
+  background: #f3f4f6;
+  color: #111827;
+}
+
+.tool-btn.active {
+  color: #4f46e5;
+  background: #eef2ff;
+  border-color: #c7d2fe;
+}
+
+.tool-btn.smart {
+  padding: 0 11px;
+}
+
+.tool-btn.smart.active {
+  color: #7c3aed;
+  background: #f5f3ff;
+  border-color: #ddd6fe;
+}
+
+.tool-btn.danger:hover {
+  color: #dc2626;
+  background: #fef2f2;
+}
+
+.tool-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.toolbar-divider {
+  width: 1px;
+  height: 25px;
+  background: #e5e7eb;
+  margin: 0 4px;
+}
+
+/* =========================================================
+   CONTROLS
+========================================================= */
+
+.controls-row {
+  max-width: 1450px;
+  margin: 0 auto 16px;
+  padding: 11px 14px;
+  border: 1px solid #e5e7eb;
+  border-radius: 13px;
+  background: white;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  flex-wrap: wrap;
+}
+
+.color-section,
+.size-section,
+.zoom-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.control-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #6b7280;
+  font-size: 12px;
+  font-weight: 750;
+  white-space: nowrap;
+}
+
+.color-list {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.color-dot {
+  width: 23px;
+  height: 23px;
+  padding: 0;
+  border-radius: 50%;
+  border: 2px solid white;
+  outline: 1px solid #d1d5db;
+  cursor: pointer;
+  transition:
+    transform 0.15s ease,
+    outline 0.15s ease;
+}
+
+.color-dot:hover {
+  transform: scale(1.12);
+}
+
+.color-dot.selected {
+  outline: 2px solid #6366f1;
+  outline-offset: 2px;
+}
+
+.size-section input[type="range"] {
+  width: 150px;
+  accent-color: #6366f1;
+  cursor: pointer;
+}
+
+.size-value {
+  min-width: 42px;
+  color: #374151;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.zoom-controls {
+  margin-left: auto;
+}
+
+.zoom-controls > span {
+  min-width: 42px;
+  text-align: center;
+  color: #374151;
+  font-size: 12px;
+  font-weight: 750;
+}
+
+.small-tool {
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background: white;
+  color: #4b5563;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.small-tool:hover {
+  background: #f3f4f6;
+  color: #111827;
+}
+
+/* =========================================================
+   FLOATING PANELS
+========================================================= */
+
+.floating-panel {
+  max-width: 1450px;
+  margin: 0 auto 16px;
+  padding: 16px;
+  border: 1px solid #e5e7eb;
+  border-radius: 15px;
+  background: white;
+  box-shadow:
+    0 15px 45px rgba(17, 24, 39, 0.09);
+  animation: panelIn 0.18s ease;
+}
+
+@keyframes panelIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.panel-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 14px;
+}
+
+.panel-heading > div {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.panel-heading strong {
+  font-size: 14px;
+}
+
+.panel-heading span {
+  color: #9ca3af;
+  font-size: 11px;
+}
+
+.close-btn {
+  width: 30px;
+  height: 30px;
+  border: 0;
+  border-radius: 8px;
+  background: #f3f4f6;
+  color: #4b5563;
+  cursor: pointer;
+  font-size: 20px;
+  line-height: 1;
+}
+
+.close-btn:hover {
+  background: #e5e7eb;
+}
+
+/* =========================================================
+   STICKERS
+========================================================= */
+
+.sticker-picker {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.sticker-btn {
+  width: 46px;
+  height: 46px;
+  border: 1px solid #e5e7eb;
+  border-radius: 11px;
+  background: #fafafa;
+  font-size: 25px;
+  cursor: pointer;
+  transition:
+    transform 0.15s ease,
+    background 0.15s ease;
+}
+
+.sticker-btn:hover {
+  transform: translateY(-2px) scale(1.05);
+  background: #f5f3ff;
+}
+
+/* =========================================================
+   TEMPLATES
+========================================================= */
+
+.template-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(150px, 1fr)
+  );
+  gap: 10px;
+}
+
+.template-card {
+  min-height: 115px;
+  padding: 14px;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  background: #fafafa;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+  transition:
+    border 0.15s ease,
+    background 0.15s ease,
+    transform 0.15s ease;
+}
+
+.template-card:hover {
+  border-color: #c7d2fe;
+  background: #f5f7ff;
+  transform: translateY(-2px);
+}
+
+.template-icon {
+  font-size: 26px;
+  margin-bottom: 3px;
+}
+
+.template-card strong {
+  color: #111827;
+  font-size: 13px;
+}
+
+.template-card span {
+  color: #9ca3af;
+  font-size: 11px;
+}
+
+/* =========================================================
+   BOARD CARD
+========================================================= */
+
+.board-card {
+  max-width: 1450px;
+  margin: 0 auto;
+  overflow: hidden;
+  border: 1px solid #e5e7eb;
+  border-radius: 17px;
+  background: white;
+  box-shadow:
+    0 16px 45px rgba(17, 24, 39, 0.06);
+}
+
+.board-topbar {
+  min-height: 58px;
+  padding: 11px 15px;
+  border-bottom: 1px solid #e5e7eb;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.board-topbar > div:first-child {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.board-topbar strong {
+  font-size: 13px;
+}
+
+.board-topbar span {
+  color: #9ca3af;
+  font-size: 11px;
+}
+
+.background-controls {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.background-controls > span {
+  margin-right: 3px;
+  color: #9ca3af;
+  font-size: 11px;
+}
+
+.bg-btn {
+  height: 29px;
+  padding: 0 9px;
+  border: 1px solid #e5e7eb;
+  border-radius: 7px;
+  background: white;
+  color: #6b7280;
+  cursor: pointer;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.bg-btn:hover {
+  background: #f9fafb;
+}
+
+.bg-btn.active {
+  color: #4f46e5;
+  border-color: #c7d2fe;
+  background: #eef2ff;
+}
+
+/* =========================================================
+   BOARD VIEWPORT
+========================================================= */
+
+.board-viewport {
+  position: relative;
+  width: 100%;
+  height: min(700px, 72vh);
+  min-height: 480px;
+  overflow: auto;
+  background: #eef0f5;
+  overscroll-behavior: contain;
+}
+
+.board-scale {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-origin: top left;
+  transition: transform 0.15s ease;
+}
+
+.drawing-board {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-width: 900px;
+  min-height: 650px;
+  overflow: hidden;
+  background-color: white;
+  isolation: isolate;
+}
+
+/* =========================================================
+   PAPER BACKGROUNDS
+========================================================= */
+
+.drawing-board.grid {
+  background-color: #ffffff;
+
+  background-image:
+    linear-gradient(
+      rgba(99, 102, 241, 0.08) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(99, 102, 241, 0.08) 1px,
+      transparent 1px
+    );
+
+  background-size: 24px 24px;
+}
+
+.drawing-board.dots {
+  background-color: #ffffff;
+
+  background-image:
+    radial-gradient(
+      rgba(99, 102, 241, 0.2) 1px,
+      transparent 1px
+    );
+
+  background-size: 20px 20px;
+}
+
+.drawing-board.plain {
+  background-color: #ffffff;
+  background-image: none;
+}
+
+/* =========================================================
+   CANVAS
+========================================================= */
+
+.drawing-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  z-index: 2;
+
+  /*
+    CRITICAL:
+    This prevents browser scrolling/gesture
+    handling from interrupting drawing.
+  */
+
+  touch-action: none;
+
+  cursor: crosshair;
+}
+
+/* =========================================================
+   POINTER MODE
+========================================================= */
+
+.drawing-board:has(
+  .sticky-note:hover
+) {
+  --dummy: 1;
+}
+
+/* =========================================================
+   STICKY NOTES
+========================================================= */
+
+.sticky-note {
+  position: absolute;
+  z-index: 10;
+  width: 220px;
+  min-height: 180px;
+  padding: 10px;
+  border-radius: 3px 3px 9px 3px;
+  box-shadow:
+    0 9px 25px rgba(17, 24, 39, 0.14);
+  transform: rotate(-0.5deg);
+  user-select: none;
+  touch-action: none;
+}
+
+.sticky-note:hover {
+  box-shadow:
+    0 13px 32px rgba(17, 24, 39, 0.18);
+}
+
+.sticky-header {
+  height: 25px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: rgba(17, 24, 39, 0.48);
+}
+
+.sticky-header input {
+  min-width: 0;
+  flex: 1;
+  border: 0;
+  outline: none;
+  background: transparent;
+  color: #111827;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.sticky-header > button {
+  width: 22px;
+  height: 22px;
+  padding: 0;
+  border: 0;
+  border-radius: 5px;
+  background: transparent;
+  color: rgba(17, 24, 39, 0.45);
+  cursor: pointer;
+  font-size: 17px;
+  line-height: 1;
+}
+
+.sticky-header > button:hover {
+  background: rgba(17, 24, 39, 0.08);
+  color: #111827;
+}
+
+.sticky-note textarea {
+  display: block;
+  width: 100%;
+  height: 105px;
+  padding: 7px 2px;
+  resize: none;
+  border: 0;
+  outline: none;
+  background: transparent;
+  color: #1f2937;
+  font-family: inherit;
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.sticky-note textarea::placeholder {
+  color: rgba(31, 41, 55, 0.45);
+}
+
+.sticky-footer {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding-top: 6px;
+  border-top: 1px solid rgba(17, 24, 39, 0.08);
+}
+
+.sticky-footer button {
+  width: 13px;
+  height: 13px;
+  padding: 0;
+  border: 1px solid rgba(17, 24, 39, 0.15);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.sticky-footer button:hover {
+  transform: scale(1.15);
+}
+
+/* =========================================================
+   STICKERS
+========================================================= */
+
+.board-sticker {
+  position: absolute;
+  z-index: 11;
+  line-height: 1;
+  cursor: grab;
+  user-select: none;
+  touch-action: none;
+  filter:
+    drop-shadow(
+      0 4px 4px
+      rgba(17, 24, 39, 0.1)
+    );
+}
+
+.board-sticker:active {
+  cursor: grabbing;
+}
+
+.board-sticker > button {
+  position: absolute;
+  top: -10px;
+  right: -13px;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: #111827;
+  color: white;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 13px;
+  line-height: 1;
+}
+
+.board-sticker:hover > button {
+  display: flex;
+}
+
+/* =========================================================
+   BOARD TEXT
+========================================================= */
+
+.board-text {
+  position: absolute;
+  z-index: 12;
+  cursor: grab;
+  user-select: none;
+  touch-action: none;
+  white-space: pre-wrap;
+  max-width: 500px;
+  line-height: 1.25;
+  text-shadow:
+    0 1px 1px
+    rgba(255, 255, 255, 0.5);
+}
+
+.board-text:active {
+  cursor: grabbing;
+}
+
+.board-text-delete {
+  display: none;
+  position: absolute;
+  top: -13px;
+  right: -25px;
+  width: 21px;
+  height: 21px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: #111827;
+  color: white;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.board-text:hover
+  .board-text-delete {
+  display: block;
+}
+
+/* =========================================================
+   EMPTY BOARD
+========================================================= */
+
+.board-empty {
+  position: absolute;
+  z-index: 3;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 320px;
+  text-align: center;
+  pointer-events: none;
+  color: #9ca3af;
+}
+
+.board-empty svg {
+  margin-bottom: 10px;
+  color: #c7d2fe;
+}
+
+.board-empty h3 {
+  margin: 0 0 6px;
+  color: #4b5563;
+  font-size: 16px;
+}
+
+.board-empty p {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.65;
+}
+
+/* =========================================================
+   QUICK ACTIONS
+========================================================= */
+
+.quick-actions {
+  max-width: 1450px;
+  margin: 15px auto 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.quick-actions button {
+  min-height: 38px;
+  padding: 0 13px;
+  border: 1px solid #e5e7eb;
+  border-radius: 9px;
+  background: white;
+  color: #4b5563;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 700;
+  transition:
+    background 0.15s ease,
+    color 0.15s ease,
+    transform 0.15s ease;
+}
+
+.quick-actions button:hover {
+  color: #4f46e5;
+  background: #f5f7ff;
+  transform: translateY(-1px);
+}
+
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+.board-viewport::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+
+.board-viewport::-webkit-scrollbar-track {
+  background: #eef0f5;
+}
+
+.board-viewport::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 99px;
+}
+
+.board-viewport::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1050px) {
+  .quick-notes-page {
+    padding: 18px;
+  }
+
+  .quick-notes-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .header-actions {
+    width: 100%;
+  }
+
+  .header-actions button {
+    flex: 1;
+  }
+
+  .creative-toolbar {
+    justify-content: flex-start;
+  }
+
+  .controls-row {
+    gap: 17px;
+  }
+
+  .zoom-controls {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 700px) {
+  .quick-notes-page {
+    padding: 10px;
+  }
+
+  .quick-notes-header h1 {
+    font-size: 30px;
+  }
+
+  .quick-notes-header p {
+    font-size: 13px;
+  }
+
+  .header-actions {
+    flex-direction: column;
+  }
+
+  .creative-toolbar {
+    padding: 8px;
+  }
+
+  .tool-group {
+    width: 100%;
+  }
+
+  .toolbar-divider {
+    display: none;
+  }
+
+  .controls-row {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .size-section input[type="range"] {
+    width: 120px;
+  }
+
+  .board-topbar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .background-controls {
+    width: 100%;
+  }
+
+  .board-viewport {
+    height: 65vh;
+    min-height: 450px;
+  }
+
+  .drawing-board {
+    min-width: 850px;
+  }
+
+  .quick-actions button {
+    flex: 1 1 calc(50% - 8px);
+  }
+}
